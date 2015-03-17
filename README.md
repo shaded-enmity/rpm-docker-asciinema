@@ -18,7 +18,7 @@ Since `build.sh` uses rpmbuild, you can find the final RPM in `~/rpmbuild/RPMS/x
 
 ```bash
 $ dnf install asciinema-docker-0.1-1.fc21_git526abc0.x86_64.rpm
-$ systemctl start asciinema-docker.service
+$ systemctl start asciinema-core.service
 ```
 
 The app is published on port 3000, so simply navigate to [http://localhost:3000/](http://localhost:3000/), and enjoy your own ASCIInema instance.
