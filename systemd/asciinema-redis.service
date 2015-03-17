@@ -1,0 +1,11 @@
+[Unit]
+Description=Redis instance for asciinema in Docker
+After=docker.service
+
+[Service]
+Type=notify
+NotifyAccess=all
+ExecStart=/usr/sbin/asciinema-bootstrap.sh redis
+
+[Install]
+WantedBy=multi-user.target

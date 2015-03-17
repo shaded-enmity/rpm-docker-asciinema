@@ -1,0 +1,11 @@
+[Unit]
+Description=Sidekiq instance for asciinema in Docker
+After=docker.service asciinema-web.service
+
+[Service]
+Type=notify
+NotifyAccess=all
+ExecStart=/usr/sbin/asciinema-bootstrap.sh sidekiq
+
+[Install]
+WantedBy=multi-user.target

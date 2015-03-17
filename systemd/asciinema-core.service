@@ -1,0 +1,13 @@
+[Unit]
+Description=Asciinema in Docker master service
+BindsTo=asciinema-sidekiq.service asciinema-web.service asciinema-postgresql.service asciinema-redis.service
+After=asciinema-sidekiq.service
+
+[Service]
+Type=notify
+NotifyAccess=all
+ExecStart=/usr/sbin/asciinema-bootstrap.sh wait-core
+ExecStop=/usr/sbin/asciinema-bootstrap.sh teardown
+
+[Install]
+WantedBy=multi-user.target

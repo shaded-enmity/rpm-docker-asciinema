@@ -1,0 +1,11 @@
+[Unit]
+Description=Rails Server instance for asciinema in Docker
+After=docker.service asciinema-redis.service asciinema-postgresql.service
+
+[Service]
+Type=notify
+NotifyAccess=all
+ExecStart=/usr/sbin/asciinema-bootstrap.sh core
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: asciinema_production
+  pool: 25
+  username: docker
+  password: docker

@@ -1,0 +1,11 @@
+[Unit]
+Description=PostgreSQL instance for asciinema in Docker
+After=docker.service
+
+[Service]
+Type=notify
+NotifyAccess=all
+ExecStart=/usr/sbin/asciinema-bootstrap.sh postgresql
+
+[Install]
+WantedBy=multi-user.target
